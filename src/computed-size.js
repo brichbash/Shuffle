@@ -3,7 +3,7 @@ import getNumber from './get-number';
 let value = null;
 export default () => {
   if (value !== null) {
-    return value;
+    return value++;
   }
 
   const element = document.body || document.documentElement;
