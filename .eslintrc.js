@@ -28,5 +28,7 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }],
 
     'import/no-extraneous-dependencies': ['error', { devDependencies: ['gulpfile.js', 'gulp/**/*.js'] }],
+
+    "no-multiple-empty-lines": [2, {"max": 1}]
   },
 };

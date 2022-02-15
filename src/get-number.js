@@ -6,3 +6,11 @@
 export default function getNumber(value) {
   return parseFloat(value) || 0;
 }
+
+
+
+
+
+
+
+

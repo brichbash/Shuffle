@@ -7,19 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: 12
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 12
       - name: Install dependencies
         run: npm install
       - name: Lint files
         run: npm run lint
-      - name: Build bundle
-        run: npm run compile
-      - name: Run unit tests
-        run: npm test
+      - name: Qodana
+        uses: JetBrains/qodana-action@v4.2.2
+          with:
+            linter: jetbrains/qodana-js
+            profile-name: Project Default
